@@ -1,8 +1,8 @@
-function stringToarray(str) {
+function stringToArray(str) {
     if(str) {
         const split = str.split(' ');
         return split;
     }
     return [''];
 }
-console.log(stringToarray('Ревуть воли як ясла повні'));
+console.log(stringToArray('Ревуть воли як ясла повні'));

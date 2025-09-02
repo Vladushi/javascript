@@ -93,6 +93,7 @@ for (const course of coursesArray) {
         li.innerText = module;
         ul.appendChild(li);
     }
+    modulesBlock.appendChild(ul);
     courseBlock.append(titleBlock, monthBlock, hourBlock, modulesBlock);
 
     document.body.appendChild(courseBlock);

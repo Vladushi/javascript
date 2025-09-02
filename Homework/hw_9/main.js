@@ -69,25 +69,31 @@ let coursesArray = [
 ];
 for (const course of coursesArray) {
 
-    let courseDiv = document.createElement('div');
-    courseDiv.classList.add('course');
+    const courseBlock = document.createElement('div');
+    courseBlock.classList.add('course');
 
-    const title = document.createElement('h2');
-    title.innerText = course.title;
+    const titleBlock = document.createElement('div');
+    titleBlock.classList.add('title');
+    titleBlock.innerText = course.title;
 
-    const monthDuration = document.createElement('div');
-    monthDuration.innerText = `Month duration: ${course.monthDuration}`;
+    const monthBlock = document.createElement('div');
+    monthBlock.classList.add('monthDuration');
+    monthBlock.innerText = `Month duration: ${course.monthDuration}`;
 
-    const hourDuration = document.createElement('div');
-    hourDuration.innerText = `Hour duration: ${course.hourDuration}`;
+    const hourBlock = document.createElement('div');
+    hourBlock.classList.add('hourDuration');
+    hourBlock.innerText = `Hour duration: ${course.hourDuration}`;
 
-    let modulesList = document.createElement('ul');
+    const modulesBlock = document.createElement('div');
+    modulesBlock.classList.add('modules');
+
+    const ul = document.createElement('ul');
     for (const module of course.modules) {
-        let li = document.createElement('li');
+        const li = document.createElement('li');
         li.innerText = module;
-        modulesList.appendChild(li);
+        ul.appendChild(li);
     }
-    courseDiv.append(title, monthDuration, hourDuration, modulesList);
+    courseBlock.append(titleBlock, monthBlock, hourBlock, modulesBlock);
 
-    document.body.appendChild(courseDiv);
+    document.body.appendChild(courseBlock);
 }
